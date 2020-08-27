@@ -1,4 +1,4 @@
-package com.board.choisunguk.Domain;
+package com.board.choisunguk.Domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

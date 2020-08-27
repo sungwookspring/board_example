@@ -1,5 +1,7 @@
 package com.board.choisunguk.Domain;
 
+import com.board.choisunguk.Domain.posts.PostRepository;
+import com.board.choisunguk.Domain.posts.Posts;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Test;
@@ -13,7 +15,8 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PostRepositoryTest {
-    @Autowired PostRepository postRepository;
+    @Autowired
+    PostRepository postRepository;
 
     @After
     public void Cleanup(){

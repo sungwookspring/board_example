@@ -1,4 +1,4 @@
-package com.board.choisunguk.Domain;
+package com.board.choisunguk.Domain.posts;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
