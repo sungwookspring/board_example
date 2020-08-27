@@ -12,8 +12,8 @@ import javax.persistence.Column;
 
 @Getter
 @Entity
+@NoArgsConstructor
 public class Posts {
-    public Posts() { }
 
     @Builder
     public Posts(String title, String content, String autor) {
