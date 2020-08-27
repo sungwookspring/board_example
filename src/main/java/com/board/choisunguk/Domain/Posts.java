@@ -1,17 +1,26 @@
 package com.board.choisunguk.Domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Column;
 
-
-@Entity
 @Getter
+@Entity
 public class Posts {
+    public Posts() { }
+
+    @Builder
+    public Posts(String title, String content, String autor) {
+        this.title = title;
+        this.content = content;
+        this.autor = autor;
+    }
 
     @Id @GeneratedValue
     private long id;
@@ -23,11 +32,4 @@ public class Posts {
     private String content;
 
     private String autor;
-
-    @Builder
-    public Posts(String title, String content, String autor) {
-        this.title = title;
-        this.content = content;
-        this.autor = autor;
-    }
 }
