@@ -1,6 +1,5 @@
 package com.board.choisunguk.Domain.posts;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +15,10 @@ import javax.persistence.Column;
 public class Posts {
 
     @Builder
-    public Posts(String title, String content, String autor) {
+    public Posts(String title, String content, String author) {
         this.title = title;
         this.content = content;
-        this.autor = autor;
+        this.author = author;
     }
 
     @Id @GeneratedValue
@@ -31,5 +30,15 @@ public class Posts {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
-    private String autor;
+    private String author;
+
+    /***
+     * 게시글 수정 비지니스 로직
+     * @param title
+     * @param content
+     */
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
