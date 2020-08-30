@@ -68,10 +68,10 @@ public class PostsApiControllerTest {
     public void 게시글저장_수정(){
         //given
         Posts savedPosts = postRepository.save(Posts.builder()
-                                .title("title")
-                                .content("content")
-                                .author("author")
-                                .build());
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
 
         Long updateId = savedPosts.getId();
         String updateTitle = "title2";
