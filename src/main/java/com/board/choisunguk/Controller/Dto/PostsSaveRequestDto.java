@@ -23,7 +23,7 @@ public class PostsSaveRequestDto {
         return Posts.builder()
                 .title(title)
                 .content(content)
-                .autor(author)
+                .author(author)
                 .build();
     }
 }
