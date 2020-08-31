@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor
-public class Posts {
+public class Posts extends BaseTimeEntity{
 
     @Builder
     public Posts(String title, String content, String author) {
