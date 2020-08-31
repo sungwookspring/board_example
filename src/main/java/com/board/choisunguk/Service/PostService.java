@@ -1,5 +1,6 @@
 package com.board.choisunguk.Service;
 
+import com.board.choisunguk.Controller.Dto.PostListResponseDto;
 import com.board.choisunguk.Controller.Dto.PostsResponseDto;
 import com.board.choisunguk.Controller.Dto.PostsSaveRequestDto;
 import com.board.choisunguk.Controller.Dto.PostsUpdateRequestDto;
@@ -8,6 +9,9 @@ import com.board.choisunguk.Domain.posts.Posts;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -35,5 +39,15 @@ public class PostService {
                 .orElseThrow(() -> new IllegalArgumentException("[*] findById 오류: 해당 게시글이 없습니다." + id));
 
         return new PostsResponseDto(entity);
+    }
+
+    /***
+     * 전체 게시글 조회
+     * @return
+     */
+    public List<PostListResponseDto> findAllDesc(){
+        return postRepository.findAllDesc().stream()
+                .map(PostListResponseDto::new)
+                .collect(Collectors.toList());
     }
 }
